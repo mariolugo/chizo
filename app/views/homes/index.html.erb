@@ -2,4 +2,11 @@
   Welcome to the new etherum token blog.
 </h1>
 
-<p><%= @response %></p>
+
+
+<% @response["tokens"].each do |token|  %>
+  <div>
+    <p><%= token["symbol"] %></p>
+    <a href="token/<%=token['address']%>">Show stats </a>
+  </div>
+<% end %>
