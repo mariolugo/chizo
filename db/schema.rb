@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 2018_05_11_150722) do
   create_table "comments", force: :cascade do |t|
     t.string "body"
     t.bigint "token_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["token_id"], name: "index_comments_on_token_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|

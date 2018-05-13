@@ -7,5 +7,5 @@ class Token < ApplicationRecord
   validates :totalSupply , presence: true
   validates :availableSupply , presence: true
 
-   has_many :comments
+  has_many :comments
 end

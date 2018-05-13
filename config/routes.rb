@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  root 'tokens#index'
+  root 'app#index'
   devise_for :users
+
   resources :tokens, only: [:index, :show]
-  resources :tokens do
-    resources :comments
-  # get '/token/:address', to: 'tokens#show'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
+
+  namespace :api do
+    namespace :v1 do
+      resources :tokens, only: [:index, :show] do
+          resources :comments, only: [:index]
+      end
+      resources :comments, only: [:create]
+    end
+  end
+
 end
