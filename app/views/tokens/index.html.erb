@@ -1,6 +1,12 @@
+<h1>
+  Welcome to ETH Blogchain.
+</h1>
 
-<h1>Name: <%= @response['name'] %></h1>
+<h3>Top 50 tokens by Capitalization:</h3>
 
-<h6>Symbol: <%= @response['symbol'] %></h6>
-<h6>Adress: <%= @response['address'] %></h6>
-<h6>Price <%= @response['price'] %></h6>
+
+  <% @tokens.each do |token| %>
+  <ol>
+    <%= link_to "#{token.symbol}", token_path(token)%>
+  </li>
+  <% end %>

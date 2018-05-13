@@ -1,10 +1,23 @@
 class TokensController < ApplicationController
-  def index
-    @response = HTTParty.get("https://api.ethplorer.io/getTokenInfo/#{params[:address]}?apiKey=freekey", :headers =>{'Content-Type' => 'application/json'})
-    # @response["tokens"].each do |key, value|
-    #   puts key
-    #   puts value
-    # end
 
+def index
+    @tokens = Token.all
   end
+
+  # def new
+  #   @token = Token.new
+  # end
+
+
+  def show
+    @token = Token.find(params[:id])
+    @comments = @token.comments
+  end
+
+private
+
+def token_params
+  params.require(:token).permit(:name,:symbol,:adress,:price,:capitalization,:totalSupply,:availableSupply,:description)
+end
+
 end

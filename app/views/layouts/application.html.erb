@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EthBlog</title>
+  <title>Eth Blogchain</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
@@ -16,17 +16,22 @@
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/">EthBlog</a></h1>
+        <h1><a href="/">Eth Blogchain</a></h1>
       </li>
     </ul>
 
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
+        <% if current_user.profile_photo %>
+        <li><img id="profile_photo" src="<%= current_user.profile_photo %>" height=66 width=66 /></li>
+          <% end %>
+          <li><%= link_to current_user.username, edit_user_registration_path %></li>
+
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li><%= link_to 'Log In', new_user_session_path %></li>
         <%- end -%>
       </ul>
     </section>

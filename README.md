@@ -1,24 +1,28 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+*Etherum tokens and resources webpage to analyze different etherum tokens
 
-* Ruby version
+* Tokens live prices powered by ethplorer.io
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+*update tokens database:
+rake tokens:update
 
-* Services (job queues, cache servers, search engines, etc.)
+exchange dAPPs:
 
-* Deployment instructions
+https://forkdelta.github.io/#!/trade/DAI-ETH
 
-* ...
+https://etherdelta.com/#PPT-ETH
+
+https://app.radarrelay.com/
+
+https://www.powh.io/
+
+https://www.bancor.network/discover
+
+https://0xproject.com/portal
+
+https://market.decentraland.org/marketplace
